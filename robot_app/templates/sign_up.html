@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <body class="hold-transition login-page" style="background-color: #b9d4ec">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="{% url 'login' %}"><b>Robot </b>Scoring System</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <h5 class="login-box-msg" id="sign_up_as">Sign up to System</h5>
+
+                <form action="{% url 'doRegister' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Email" name="email">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="name" name="name">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fa fa-paper-plane"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="gender" name="gender">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fa fa-paper-plane"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="job" name="job">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fa fa-paper-plane"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="age" name="age">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fa fa-tree"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="contact_num" name="contact_num">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fa fa-mobile"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="Password" name="password1">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="Comfirm Password" name="password2">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="type" id="type_testuser"
+                                           checked value="2">
+                                    <label class="form-check-label" for="type_testuser">
+                                        TestUser
+                                    </label>
+                                </div>
+                            </div>
+{#                            <div class="col-6">#}
+{#                                <div class="form-check">#}
+{#                                    <input class="form-check-input" type="radio" name="type" value="1" id="type_admin">#}
+{#                                    <label class="form-check-label" for="type_admin">#}
+{#                                        Admin#}
+{#                                    </label>#}
+{#                                </div>#}
+{#                            </div>#}
+
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        </div>
+                        <div class="col">
+                            <a href="{% url 'login' %}" class="btn btn-dark btn-block">Back</a>
+                        </div>
+                    </div>
+
+                    {% comment %} <div class="col-12 text-center">
+            <a href="{% url 'password_reset' %}">Reset Password</a>
+          </div>  {% endcomment %}
+
+                    {% comment %} Display Messages {% endcomment %}
+                    {% if messages %}
+                        <div class="col-12">
+                            {% for message in messages %}
+                                {% if message.tags == "error" %}
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                                         style="margin-top: 10px;">
+                                        {{ message }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </form>
+                <!-- /.col -->
+            </div>
+
+
+        </div>
+    </div>
+    <!-- /.login-box -->
+
+{% endblock %}
+
+
+
