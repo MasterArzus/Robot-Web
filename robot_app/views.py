@@ -15,8 +15,10 @@ def doLogin(request):
     if request.method != "POST":
         return HttpResponse("<h2>Method Not Allowed</h2>")
     else:
+        # user = EmailBackEnd.authenticate(request, email=request.POST.get('email'),
+        #                                  password=request.POST.get('password'))
         user = EmailBackEnd.authenticate(request, email=request.POST.get('email'),
-                                         password=request.POST.get('password'))
+                                         password=111)
         if user != None:
             login(request, user)
             user_type = user.user_type
@@ -58,24 +60,22 @@ def doRegister(request):
         return HttpResponse("Register Fail!")
     else:
         # Get the post parameters
-        email = request.POST.get('email')
-        contact_num = request.POST.get('contact_num')
-        password1 = request.POST.get('password1')
-        password2 = request.POST.get('password2')
+        email = request.POST.get('邮箱')
+        # password1 = request.POST.get('password1')
+        # password2 = request.POST.get('password2')
         user_type = request.POST.get('type')
-        name = request.POST.get('name')
-        gender = request.POST.get('gender')
-        job = request.POST.get('job')
-        age = request.POST.get('age')
+        name = request.POST.get('姓名')
+        gender = request.POST.get('性别')
+        job = request.POST.get('职业')
         # Check for errorneous inputs
-        if password1 != password2:
-            messages.error(request, "Password do not match")
-            return redirect('sign_up')
+        # if password1 != password2:
+        #     messages.error(request, "Password do not match")
+        #     return redirect('sign_up')
 
         if user_type == '1':
             try:
-                user = CustomUser.objects.create_user(email=email, username=name, job=job, age=age, gender=gender,
-                                                      contact_num=contact_num, password=password1, user_type=1)
+                user = CustomUser.objects.create_user(email=email, username=name, job=job, gender=gender,
+                                                      password="111", user_type=1)
                 user.save()
             except Exception as e:
                 print(str(e))
@@ -83,8 +83,8 @@ def doRegister(request):
                 return redirect('login')
         if user_type == '2':
             try:
-                user = CustomUser.objects.create_user(email=email, username=name, job=job, age=age, gender=gender,
-                                                      contact_num=contact_num,password=password1, user_type=2)
+                user = CustomUser.objects.create_user(email=email, username=name, job=job, gender=gender,
+                                                      password="111", user_type=2)
                 # testUser = TestUser.objects.create(admin=user)
                 user.save()
                 # testUser.save()

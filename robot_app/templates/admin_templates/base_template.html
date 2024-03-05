@@ -73,18 +73,11 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
 
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-user-edit mr-2"></i> Update Profile
-                    </a>
-
                     <div class="dropdown-divider"></div>
-                    <a href="# " class="dropdown-item">
+                    <a href="{% url 'logout_user' %}" class="dropdown-item">
                         <i class="fas fa-power-off mr-2"></i> Logout
                     </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="# " class="dropdown-item">
-                        <i class="fas fa-power-off mr-2"></i> Password Change
-                    </a>
+
                 </div>
             </li>
         </ul>
@@ -93,7 +86,7 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    {% include 'sidebar_template.html' with user=user id=id %}
+    {% include 'admin_templates/sidebar_template.html' with user=user id=id %}
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">

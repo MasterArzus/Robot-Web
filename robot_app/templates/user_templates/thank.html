@@ -1,0 +1,79 @@
+{% extends 'user_templates/base_template.html' %}
+
+{% block main_content %}
+
+    {% load static %}
+    <div class="card">
+        <div class="card-body">
+            <h1 >感谢您的参与！</h1>
+            <span class="badge bg-secondary">您可以继续评测其他机器人</span>
+        </div>
+    </div>
+
+
+
+{% endblock main_content %}
+
+{% block custom_js %}
+
+    <script>
+        $(document).ready(function () {
+            var feeling_list = {{ feeling_list|safe }}
+            var r1_feeling_list = {{ r1_feeling_list }}
+            var donutChartCanvas = $('#pieChart').get(0).getContext('2d')
+            var pieData = {
+                labels: feeling_list,
+                datasets: [
+                    {
+                        data: r1_feeling_list,
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc'],
+                    }
+                ]
+            }
+
+            //-------------
+            //- PIE CHART -
+            //-------------
+            // Get context with jQuery - using jQuery's .get() method.
+            var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+            var pieData = pieData;
+            var pieOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            var pieChart = new Chart(pieChartCanvas, {
+                type: 'pie',
+                data: pieData,
+                options: pieOptions
+            })
+
+
+            // Get context with jQuery - using jQuery's .get() method.
+            var r2_feeling_list = {{ r2_feeling_list }}
+            var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+            var donutData = {
+                labels: feeling_list,
+                datasets: [
+                    {
+                        data: r2_feeling_list,
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f50900', '#00f125', '#ab2347', '#002200'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            var donutChart = new Chart(donutChartCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            })
+        })
+    </script>
+
+{% endblock custom_js %}

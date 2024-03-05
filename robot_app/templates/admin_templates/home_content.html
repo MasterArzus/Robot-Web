@@ -1,4 +1,4 @@
-{% extends 'base_template.html' %}
+{% extends 'admin_templates/base_template.html' %}
 
 {% block main_content %}
 
@@ -80,14 +80,12 @@
                     <!-- PIE CHART -->
                     <div class="card card-danger">
                         <div class="card-header">
-                            <h3 class="card-title">家庭服务（机器人1）</h3>
+                            <h3 class="card-title">家庭服务（机器人1）用户综合评分</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
                                         class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                        class="fas fa-times"></i></button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -103,14 +101,12 @@
                     <!-- DONUT CHART -->
                     <div class="card card-danger">
                         <div class="card-header">
-                            <h3 class="card-title">商务场所（机器人2）</h3>
+                            <h3 class="card-title">商务场所（机器人2）用户综合评分</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
                                         class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                        class="fas fa-times"></i></button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -120,10 +116,139 @@
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
-
                 </div>
+
             </div>
-            
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- PIE CHART -->
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h3 class="card-title">家庭服务（机器人1）交流准确评分</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="r1Chart1"
+                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- DONUT CHART -->
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h3 class="card-title">商务场所（机器人2）交流准确评分</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="r2Chart1"
+                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- DONUT CHART -->
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h3 class="card-title">家庭服务（机器人1）交流自然评分</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="r1Chart2"
+                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- DONUT CHART -->
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h3 class="card-title">商务场所（机器人2）交流自然评分</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="r2Chart2"
+                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- DONUT CHART -->
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h3 class="card-title">家庭服务（机器人1）交流及时评分</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="r1Chart3"
+                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- DONUT CHART -->
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h3 class="card-title">商务场所（机器人2）交流及时评分</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="r2Chart3"
+                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+
+            </div>
+
         </div><!-- /.container-fluid -->
     </section>
 
@@ -133,15 +258,14 @@
 
     <script>
         $(document).ready(function () {
+            var feeling_list = {{ feeling_list|safe }}
+            var r1_feeling_list = {{ r1_feeling_list }}
             var donutChartCanvas = $('#pieChart').get(0).getContext('2d')
             var pieData = {
-                labels: [
-                    'Doctors',
-                    'Patients',
-                ],
+                labels: feeling_list,
                 datasets: [
                     {
-                        data: [{{ doctor_count }}, {{ patient_count }}],
+                        data: r1_feeling_list,
                         backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc'],
                     }
                 ]
@@ -167,16 +291,13 @@
 
 
             // Get context with jQuery - using jQuery's .get() method.
-            var department_name_list =
-            {{ department_name_list|safe }}
-            var doctors_count_list_in_department =
-            {{ doctors_count_list_in_department }}
+            var r2_feeling_list = {{ r2_feeling_list }}
             var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
             var donutData = {
-                labels: department_name_list,
+                labels: feeling_list,
                 datasets: [
                     {
-                        data: doctors_count_list_in_department,
+                        data: r2_feeling_list,
                         backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f50900', '#00f125', '#ab2347', '#002200'],
                     }
                 ]
@@ -192,7 +313,156 @@
                 data: donutData,
                 options: donutOptions
             })
-           
+
+
+            // r1Chart1
+            var r1_feeling1 = {{ r1_feeling1 }}
+            var donutChartCanvas = $('#r1Chart1').get(0).getContext('2d')
+            var donutData = {
+                labels: ["1分","2分","3分","4分","5分"],
+                datasets: [
+                    {
+                        data: r1_feeling1,
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f50900', '#00f125', '#ab2347', '#002200'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            var donutChart = new Chart(donutChartCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            })
+
+               // r2Chart1
+            var r2_feeling1 = {{ r2_feeling1 }}
+            var donutChartCanvas = $('#r2Chart1').get(0).getContext('2d')
+            var donutData = {
+                labels: ["1分","2分","3分","4分","5分"],
+                datasets: [
+                    {
+                        data: r2_feeling1,
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f50900', '#00f125', '#ab2347', '#002200'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            var donutChart = new Chart(donutChartCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            })
+
+               // r1Chart2
+            var r1_feeling2 = {{ r1_feeling2 }}
+            var donutChartCanvas = $('#r1Chart2').get(0).getContext('2d')
+            var donutData = {
+                labels: ["1分","2分","3分","4分","5分"],
+                datasets: [
+                    {
+                        data: r1_feeling2,
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f50900', '#00f125', '#ab2347', '#002200'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            var donutChart = new Chart(donutChartCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            })
+            
+            
+               // r2Chart2
+            var r2_feeling2 = {{ r2_feeling2 }}
+            var donutChartCanvas = $('#r2Chart2').get(0).getContext('2d')
+            var donutData = {
+                labels: ["1分","2分","3分","4分","5分"],
+                datasets: [
+                    {
+                        data: r2_feeling2,
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f50900', '#00f125', '#ab2347', '#002200'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            var donutChart = new Chart(donutChartCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            })
+            
+            
+               // r1Chart3
+            var r1_feeling3 = {{ r1_feeling3 }}
+            var donutChartCanvas = $('#r1Chart3').get(0).getContext('2d')
+            var donutData = {
+                labels: ["1分","2分","3分","4分","5分"],
+                datasets: [
+                    {
+                        data: r1_feeling3,
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f50900', '#00f125', '#ab2347', '#002200'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            var donutChart = new Chart(donutChartCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            })
+            
+                           // r2Chart3
+            var r2_feeling3 = {{ r2_feeling3 }}
+            var donutChartCanvas = $('#r2Chart3').get(0).getContext('2d')
+            var donutData = {
+                labels: ["1分","2分","3分","4分","5分"],
+                datasets: [
+                    {
+                        data: r2_feeling3,
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f50900', '#00f125', '#ab2347', '#002200'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            var donutChart = new Chart(donutChartCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            })
+
+
+        })
     </script>
 
 {% endblock custom_js %}

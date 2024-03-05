@@ -32,8 +32,9 @@ urlpatterns = [
 
     # user
     path('testuser_home/', user_views.testuser_home, name="testuser_home"),
+    path('r2_scoring/', user_views.r2_scoring, name="r2_scoring"),
     path('scoring_done/', user_views.scoring_done, name="scoring_done"),
-    path('statics/', user_views.statics, name="statics"),
-
+    # path('statics/', user_views.statics, name="statics"),
+    path('thank/', user_views.thank, name="thank"),
 
 ]
