@@ -49,11 +49,11 @@ def admin_home(request):
         if user.r2feeling:
             r2_feeling_list[user.r2feeling] += 1
         if user.r2feeling1:
-            r1_feeling1[user.r2feeling1-1] += 1
+            r2_feeling1[user.r2feeling1-1] += 1
         if user.r2feeling2:
-            r1_feeling2[user.r2feeling2-1] += 1
+            r2_feeling2[user.r2feeling2-1] += 1
         if user.r2feeling2:
-            r1_feeling3[user.r2feeling3-1] += 1
+            r2_feeling3[user.r2feeling3-1] += 1
 
     r2_feeling_count = []
     for key in r2_feeling_list.keys():
