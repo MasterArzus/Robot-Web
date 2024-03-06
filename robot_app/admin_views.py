@@ -60,13 +60,19 @@ def admin_home(request):
         r2_feeling_count.append(r2_feeling_list[key])
     print(r2_feeling_count)
 
-    r1_score = round((CustomUser.objects.aggregate(avg_value=Avg('r1feeling1'))['avg_value'] +
-                      CustomUser.objects.aggregate(avg_value=Avg('r1feeling2'))['avg_value'] +
-                      CustomUser.objects.aggregate(avg_value=Avg('r1feeling3'))['avg_value']) / 3, 2)
+    r1_score = 0
+    sr1 = CustomUser.objects.aggregate(avg_value=Avg('r1feeling1'))['avg_value']
+    sr2 = CustomUser.objects.aggregate(avg_value=Avg('r1feeling2'))['avg_value']
+    sr3 = CustomUser.objects.aggregate(avg_value=Avg('r1feeling3'))['avg_value']
+    if sr1 and sr2 and sr3:
+        r1_score = round((sr1 + sr2 + sr3) / 3, 2)
 
-    r2_score = round((CustomUser.objects.aggregate(avg_value=Avg('r2feeling1'))['avg_value'] +
-                      CustomUser.objects.aggregate(avg_value=Avg('r2feeling2'))['avg_value'] +
-                      CustomUser.objects.aggregate(avg_value=Avg('r2feeling3'))['avg_value']) / 3, 2)
+    r2_score = 0
+    sr4 = CustomUser.objects.aggregate(avg_value=Avg('r2feeling1'))['avg_value']
+    sr5 = CustomUser.objects.aggregate(avg_value=Avg('r2feeling2'))['avg_value']
+    sr6 = CustomUser.objects.aggregate(avg_value=Avg('r2feeling3'))['avg_value']
+    if sr4 and sr5 and sr6:
+        r2_score = round((sr4 + sr5 + sr6) / 3, 2)
 
     context = {
         "r1_count": r1_count,

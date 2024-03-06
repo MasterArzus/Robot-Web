@@ -17,6 +17,7 @@
                 <form action="{% url 'doRegister' %}" method="POST">
                     {% csrf_token %}
                     <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">邮箱</label>
                         <input type="email" class="form-control" placeholder="邮箱" name="邮箱">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -25,6 +26,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">姓名</label>
                         <input type="text" class="form-control" placeholder="姓名" name="姓名">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -34,22 +36,27 @@
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="性别" name="性别">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fa fa-paper-plane"></span>
-                            </div>
-                        </div>
+                        <label class="input-group-text" for="inputGroupSelect01">性别</label>
+                        <select class="form-select"  name="性别">
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="职业" name="职业">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fa fa-paper-plane"></span>
-                            </div>
-                        </div>
+                        <label class="input-group-text" for="inputGroupSelect01">职业</label>
+                        <select class="form-select"  name="职业">
+                            <option value="本科在读">本科在读</option>
+                            <option value="研究生在读">研究生在读</option>
+                            <option value="中小学生">中小学生</option>
+                            <option value="教师">教师</option>
+                            <option value="管理人员">管理人员</option>
+                            <option value="市场/公关人员">市场/公关人员</option>
+                            <option value="文职/办事人员">文职/办事人员</option>
+                            <option value="技术/研发人员">技术/研发人员</option>
+                        </select>
                     </div>
+
 
 {#                    <div class="input-group mb-3">#}
 {#                        <input type="password" class="form-control" placeholder="Password" name="password1">#}

@@ -18,7 +18,7 @@ def doLogin(request):
         # user = EmailBackEnd.authenticate(request, email=request.POST.get('email'),
         #                                  password=request.POST.get('password'))
         user = EmailBackEnd.authenticate(request, email=request.POST.get('email'),
-                                         password=111)
+                                         password="111")
         if user != None:
             login(request, user)
             user_type = user.user_type
