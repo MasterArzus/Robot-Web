@@ -69,7 +69,7 @@ def admin_home(request):
 
     r2_score = 0
     sr4 = CustomUser.objects.aggregate(avg_value=Avg('r2feeling1'))['avg_value']
-    sr5 = CustomUser.objects.aggregate(avg_value=Avg('r2feeling2'))['avg_value']
+    sr5 = CustomUser.objects.aggregate(avg_value=Avg('r2feeling2'))['avg_value'] 
     sr6 = CustomUser.objects.aggregate(avg_value=Avg('r2feeling3'))['avg_value']
     if sr4 and sr5 and sr6:
         r2_score = round((sr4 + sr5 + sr6) / 3, 2)
